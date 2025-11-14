@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Assignment</title>
+</head>
+<body>
+  <h2>Q1. Sum, Difference, Product, Quotient</h2>
+  <script>
+    let num1 = parseFloat(prompt("Enter first number:"));
+    let num2 = parseFloat(prompt("Enter second number:"));
+    document.write("Sum: " + (num1 + num2) + "<br>");
+    document.write("Difference: " + (num1 - num2) + "<br>");
+    document.write("Product: " + (num1 * num2) + "<br>");
+    document.write("Quotient: " + (num1 / num2) + "<br><hr>");
+  </script>
+
+  <h2>Q2. Array Operations</h2>
+  <script>
+    let arr = [45, 12, 89, 34, 67];
+    let largest = Math.max(...arr);
+    let smallest = Math.min(...arr);
+    let asc = [...arr].sort((a, b) => a - b);
+    let desc = [...arr].sort((a, b) => b - a);
+    document.write("Array: " + arr + "<br>");
+    document.write("Largest: " + largest + "<br>");
+    document.write("Smallest: " + smallest + "<br>");
+    document.write("Ascending: " + asc + "<br>");
+    document.write("Descending: " + desc + "<br><hr>");
+  </script>
+
+  <h2>Q3. Form Validation</h2>
+  <form id="myForm">
+    Name: <input type="text" id="name"><br>
+    Email: <input type="text" id="email"><br>
+    Age: <input type="text" id="age"><br>
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let age = parseInt(document.getElementById("age").value);
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (name === "") {
+        alert("Name cannot be empty");
+        return;
+      }
+      if (!email.match(emailPattern)) {
+        alert("Invalid email format");
+        return;
+      }
+      if (isNaN(age) || age < 18 || age > 100) {
+        alert("Age must be between 18 and 100");
+        return;
+      }
+      alert("Form submitted successfully!");
+    }
+  </script>
+  <hr>
+
+  <h2>Q4. Student Object</h2>
+  <script>
+    let student = {
+      name: "Rahul",
+      age: 20,
+      grade: "B"
+    };
+    student.class = "CS101";
+    student.grade = "A";
+    for (let key in student) {
+      document.write(key + ": " + student[key] + "<br>");
+    }
+  </script>
+  <hr>
+
+  <h2>Q5. Array Functions with map(), filter(), reduce()</h2>
+  <script>
+    function processArray(arr) {
+      let result = arr
+        .filter(num => num % 2 === 0)
+        .map(num => num * 2)
+        .reduce((sum, num) => sum + num, 0);
+      return result;
+    }
+    let numbers = [1, 2, 3, 4, 5, 6];
+    document.write("Sum: " + processArray(numbers));
+  </script>
+</body>
+</html>
