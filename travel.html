@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dream Travel Agency</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Dream Travel Agency</h1>
+  <nav>
+    <a onclick="showPage('home')" class="active">Home</a>
+    <a onclick="showPage('packages')">Packages</a>
+    <a onclick="showPage('booking')">Booking</a>
+    <a onclick="showPage('gallery')">Gallery</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <div class="banner">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Travel Banner">
+    <h2>Explore the World with Us</h2>
+  </div>
+  <h3>Welcome to Dream Travel Agency</h3>
+  <p>We bring you the best travel experiences across the world.</p>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <h2>Available Packages</h2>
+
+  <table id="packagesTable">
+    <thead>
+      <tr>
+        <th>Destination</th>
+        <th>Duration</th>
+        <th>Base Price</th>
+        <th>Season</th>
+        <th>Final Price</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <h2>Booking Form</h2>
+  <form id="bookingForm">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Travel Date:</label>
+    <input type="date" name="date" required>
+
+    <label>Destination:</label>
+    <select name="destination">
+      <option>Paris</option>
+      <option>Dubai</option>
+      <option>Bali</option>
+    </select>
+
+    <label>Number of Travelers:</label>
+    <input type="number" name="travelers" min="1" required>
+
+    <input type="submit" value="Book Now">
+  </form>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1543340713-8a9d76a3a2b0"
+         data-large="https://images.unsplash.com/photo-1543340713-8a9d76a3a2b0"
+         alt="Paris Eiffel Tower">
+
+    <img src="https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba"
+         data-large="https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba"
+         alt="Dubai Burj Khalifa">
+
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+         data-large="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+         alt="Bali Beach">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>About Us</h2>
+  <p>We are a leading travel agency with 10+ years of experience.</p>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <img id="modalImg">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
